@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Helvetica Neue", Arial, sans-serif, system-ui;
+  --font-serif: "Georgia", ui-serif, Cambria, "Times New Roman", Times, serif;
+
+  --color-rp-forest: #1B4332;
+  --color-rp-leaf: #2D6A4F;
+  --color-rp-sage: #52B788;
+  --color-rp-mint: #95D5B2;
+  --color-rp-cream: #F8F4EC;
+  --color-rp-gold: #C9A84C;
+  --color-rp-dark: #0D1F1A;
+}
+
+body {
+  background-color: var(--color-rp-cream);
+  color: var(--color-rp-dark);
+}

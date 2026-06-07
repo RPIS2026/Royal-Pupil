@@ -1,0 +1,6 @@
+{
+  "name": "Royal Pupil International Residential School",
+  "description": "Official website for Royal Pupil International Residential School located in Kudathini Village, Ballari District, Karnataka.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

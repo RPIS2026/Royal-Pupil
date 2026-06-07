@@ -31,8 +31,12 @@ export default function Navbar() {
       } border-b-2 border-rp-gold flex items-center`}
     >
       <div className="w-full px-10 flex justify-between items-center">
-        <a href="#" className="font-serif text-[18px] font-bold text-rp-gold flex items-center gap-2 tracking-wide uppercase">
-          Royal Pupil Int. School
+        <a href="#" className="font-serif text-[18px] font-bold text-rp-gold flex items-center gap-3 tracking-wide uppercase">
+          <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/f_auto,q_auto/Screenshot_2026-06-07_175214_1_nlcksl" alt="Logo" className="h-[40px] w-auto" />
+          <div className="flex flex-col">
+            <span className="leading-tight">Royal Pupil</span>
+            <span className="text-[8px] font-sans tracking-[0.2em]">International Residential School</span>
+          </div>
         </a>
 
         {/* Desktop Nav */}

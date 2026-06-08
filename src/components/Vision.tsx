@@ -8,7 +8,7 @@ export default function Vision() {
   ];
 
   return (
-    <section id="vision" className="py-[40px] px-[40px] bg-rp-forest relative overflow-hidden w-full max-w-7xl mx-auto">
+    <section id="vision" className="scroll-mt-[72px] py-[40px] px-[40px] bg-rp-forest relative overflow-hidden w-full max-w-7xl mx-auto">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-rp-leaf rounded-[50%] opacity-20 -mr-20 -mt-20 blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-rp-sage rounded-[50%] opacity-10 -ml-20 -mb-20 blur-3xl"></div>

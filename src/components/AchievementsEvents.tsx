@@ -38,7 +38,7 @@ export default function AchievementsEvents() {
   ];
 
   return (
-    <section id="achievements" className="py-[40px] px-[40px] bg-white w-full max-w-7xl mx-auto">
+    <section id="achievements" className="scroll-mt-[72px] py-[40px] px-[40px] bg-white w-full max-w-7xl mx-auto">
       <div className="w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-[40px]">
           

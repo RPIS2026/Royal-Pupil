@@ -11,7 +11,7 @@ export default function Parents() {
   ];
 
   return (
-    <section id="parents" className="py-[40px] px-[40px] bg-white relative w-full max-w-7xl mx-auto">
+    <section id="parents" className="scroll-mt-[72px] py-[40px] px-[40px] bg-white relative w-full max-w-7xl mx-auto">
       <div className="w-full relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

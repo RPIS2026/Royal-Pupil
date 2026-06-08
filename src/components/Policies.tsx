@@ -43,7 +43,7 @@ export default function Policies() {
   ];
 
   return (
-    <section id="policies" className="py-[40px] px-[40px] bg-rp-cream w-full max-w-7xl mx-auto">
+    <section id="policies" className="scroll-mt-[72px] py-[40px] px-[40px] bg-rp-cream w-full max-w-7xl mx-auto">
       <div className="w-full">
         <h2 className="text-[28px] md:text-4xl font-serif font-bold text-rp-forest mb-[16px] border-b-2 border-rp-gold inline-block pb-[4px]">
           School Policies

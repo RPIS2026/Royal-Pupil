@@ -11,7 +11,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-[40px] px-[40px] bg-rp-cream relative w-full max-w-7xl mx-auto">
+    <section id="contact" className="scroll-mt-[72px] py-[40px] px-[40px] bg-rp-cream relative w-full max-w-7xl mx-auto">
       <div className="w-full">
         <div className="bg-white rounded-[8px] shadow-[0_4px_12px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col lg:flex-row overflow-hidden">
           

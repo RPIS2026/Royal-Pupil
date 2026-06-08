@@ -20,7 +20,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-[40px] px-[40px] bg-rp-cream w-full max-w-7xl mx-auto">
+    <section id="about" className="scroll-mt-[72px] py-[40px] px-[40px] bg-rp-cream w-full max-w-7xl mx-auto">
       <div className="w-full">
         <div className="flex flex-col lg:grid lg:grid-cols-[2fr_1fr] gap-[24px]">
           <motion.div

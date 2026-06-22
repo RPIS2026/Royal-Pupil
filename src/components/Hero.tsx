@@ -1,5 +1,6 @@
 import { motion, useMotionValue, useTransform, animate, useInView } from 'motion/react';
 import { useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 function StatCounter({ end, suffix = "", prefix = "" }: { end: number, suffix?: string, prefix?: string }) {
   const count = useMotionValue(0);
@@ -77,18 +78,18 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/#contact"
             className="px-[32px] py-[12px] bg-[#f5d365] text-[#1B4332] font-semibold rounded-[30px] hover:bg-yellow-400 transition-all shadow-[0_0_25px_rgba(245,211,101,0.4)] text-[14px]"
           >
             Apply for Admission
-          </a>
-          <a
-            href="#about"
+          </Link>
+          <Link
+            to="/#about"
             className="px-[32px] py-[12px] bg-transparent border-[1.5px] border-white/80 text-white font-semibold rounded-[30px] hover:bg-white hover:text-[#1B4332] transition-colors text-[14px]"
           >
             Discover Our School
-          </a>
+          </Link>
         </motion.div>
       </div>
 
@@ -127,6 +128,59 @@ export default function Hero() {
               <StatCounter end={100} suffix="%" />
             </div>
             <div className="text-[8px] md:text-[10px] text-white/80 font-bold uppercase tracking-[0.05em] mt-[4px]">HOLISTIC<br className="md:hidden"/> DEVELOPMENT</div>
+          </div>
+        </div>
+      </motion.div>
+      {/* Topics Blocks */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="relative z-10 w-full max-w-6xl mx-auto px-4 mt-[40px]"
+      >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 flex flex-col justify-between hover:bg-white/20 transition-all">
+            <div>
+              <div className="text-[30px] mb-2">🏫</div>
+              <h3 className="text-[#f5d365] font-serif font-bold text-[18px] mb-2 uppercase tracking-wide">School Info</h3>
+              <p className="text-white/80 text-[13px] mb-4">Discover our school's philosophy, infrastructure, and values.</p>
+            </div>
+            <Link to="/school-information" className="text-white font-bold text-[12px] uppercase border border-white/30 rounded px-4 py-2 text-center hover:bg-[#f5d365] hover:text-[#1B4332] hover:border-[#f5d365] transition-colors">
+              View More
+            </Link>
+          </div>
+          
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 flex flex-col justify-between hover:bg-white/20 transition-all">
+            <div>
+              <div className="text-[30px] mb-2">🏆</div>
+              <h3 className="text-[#f5d365] font-serif font-bold text-[18px] mb-2 uppercase tracking-wide">Toppers & Achievers</h3>
+              <p className="text-white/80 text-[13px] mb-4">Meet our outstanding students and their remarkable achievements.</p>
+            </div>
+            <Link to="/toppers" className="text-white font-bold text-[12px] uppercase border border-white/30 rounded px-4 py-2 text-center hover:bg-[#f5d365] hover:text-[#1B4332] hover:border-[#f5d365] transition-colors">
+              View More
+            </Link>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 flex flex-col justify-between hover:bg-white/20 transition-all">
+            <div>
+              <div className="text-[30px] mb-2">🔬</div>
+              <h3 className="text-[#f5d365] font-serif font-bold text-[18px] mb-2 uppercase tracking-wide">Facilities</h3>
+              <p className="text-white/80 text-[13px] mb-4">Explore our Computer Lab, Science Lab, and more campus amenities.</p>
+            </div>
+            <Link to="/facilities-detail" className="text-white font-bold text-[12px] uppercase border border-white/30 rounded px-4 py-2 text-center hover:bg-[#f5d365] hover:text-[#1B4332] hover:border-[#f5d365] transition-colors">
+              View More
+            </Link>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-5 flex flex-col justify-between hover:bg-white/20 transition-all">
+            <div>
+              <div className="text-[30px] mb-2">🎭</div>
+              <h3 className="text-[#f5d365] font-serif font-bold text-[18px] mb-2 uppercase tracking-wide">Events</h3>
+              <p className="text-white/80 text-[13px] mb-4">Annual Day, Cultural Programs, Sports Day, and other celebrations.</p>
+            </div>
+            <Link to="/events" className="text-white font-bold text-[12px] uppercase border border-white/30 rounded px-4 py-2 text-center hover:bg-[#f5d365] hover:text-[#1B4332] hover:border-[#f5d365] transition-colors">
+              View More
+            </Link>
           </div>
         </div>
       </motion.div>

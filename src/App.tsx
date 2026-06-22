@@ -3,23 +3,22 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Vision from './components/Vision';
-import Faculty from './components/Faculty';
-import Facilities from './components/Facilities';
-import Policies from './components/Policies';
-import Parents from './components/Parents';
-import AchievementsEvents from './components/AchievementsEvents';
-import AdmissionsCTA from './components/AdmissionsCTA';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import SchoolInformation from './pages/SchoolInformation';
+import Toppers from './pages/Toppers';
+import FacilitiesDetail from './pages/FacilitiesDetail';
+import Events from './pages/Events';
+import { useEffect } from 'react';
 
 function FloatingWhatsApp() {
   return (
     <a 
-      href="#" 
+      href="https://wa.me/919845138636" 
+      target="_blank"
+      rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform cursor-pointer"
       aria-label="Chat on WhatsApp"
     >
@@ -30,20 +29,38 @@ function FloatingWhatsApp() {
   );
 }
 
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 0);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <div className="min-h-screen bg-rp-cream font-sans text-rp-dark selection:bg-rp-sage selection:text-white">
+      <ScrollToTop />
       <Navbar />
-      <Hero />
-      <About />
-      <Vision />
-      <Faculty />
-      <Facilities />
-      <AchievementsEvents />
-      <Policies />
-      <Parents />
-      <AdmissionsCTA />
-      <Contact />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/school-information" element={<SchoolInformation />} />
+        <Route path="/toppers" element={<Toppers />} />
+        <Route path="/facilities-detail" element={<FacilitiesDetail />} />
+        <Route path="/events" element={<Events />} />
+      </Routes>
       <Footer />
       <FloatingWhatsApp />
     </div>

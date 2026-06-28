@@ -20,11 +20,11 @@ export default function SchoolInformation() {
         </motion.div>
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-[40px] grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=1000" alt="School building exterior" className="w-full h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30" />
-        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1000" alt="Students in classroom" className="w-full h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30" />
-        <img src="https://images.unsplash.com/photo-1546410531-bea5aadcb6ce?auto=format&fit=crop&q=80&w=1000" alt="School library" className="w-full h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30" />
-        <img src="https://images.unsplash.com/photo-1519452207936-e832049e75a6?auto=format&fit=crop&q=80&w=1000" alt="School campus" className="w-full h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30" />
+      <div className="w-full max-w-7xl mx-auto px-[40px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/v1782642628/IMG_5443_qcnshy.jpg" alt="School activity 1" className="w-full h-56 md:h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30 hover:scale-105 transition-transform duration-300" />
+        <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/v1782642616/IMG_5245_ow0wxr.jpg" alt="School activity 2" className="w-full h-56 md:h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30 hover:scale-105 transition-transform duration-300" />
+        <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/a_-90/v1782642616/IMG_5324_rmblpz.jpg" alt="School activity 3" className="w-full h-56 md:h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30 hover:scale-105 transition-transform duration-300" />
+        <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/v1782642601/IMG_5485_qjtxvl.jpg" alt="School activity 4" className="w-full h-56 md:h-64 object-cover rounded-xl shadow-md border-2 border-rp-gold/30 hover:scale-105 transition-transform duration-300" />
       </div>
 
       <About />

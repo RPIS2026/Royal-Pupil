@@ -1,35 +1,11 @@
 import { motion } from 'motion/react';
 
 export default function Toppers() {
-  const toppers = [
-    {
-      name: 'Aditi Sharma',
-      grade: 'Grade 10',
-      achievement: 'State Topper, 99.8%',
-      quote: 'Consistency and the support of my teachers helped me achieve my goals.',
-      image: 'https://images.unsplash.com/photo-1542596594-649edbc13630?auto=format&fit=crop&q=80&w=400'
-    },
-    {
-      name: 'Rahul Verma',
-      grade: 'Grade 12',
-      achievement: 'National Science Olympiad Gold Medalist',
-      quote: 'The school\'s science lab and expert faculty sparked my innovation.',
-      image: 'https://images.unsplash.com/photo-1555169062-0133485b0015?auto=format&fit=crop&q=80&w=400'
-    },
-    {
-      name: 'Sneha Patel',
-      grade: 'Grade 10',
-      achievement: 'District Topper, 98.5%',
-      quote: 'I learned to balance academics and sports beautifully here.',
-      image: 'https://images.unsplash.com/photo-1517462964-21fdcec3f25b?auto=format&fit=crop&q=80&w=400'
-    },
-    {
-      name: 'Vikram Singh',
-      grade: 'Grade 12',
-      achievement: 'National Level Athlete',
-      quote: 'Royal Pupil supported my sports journey while ensuring my studies never lagged.',
-      image: 'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?auto=format&fit=crop&q=80&w=400'
-    }
+  const images = [
+    'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto/v1782644373/WhatsApp_Image_2026-06-06_at_09.38.18_tg4i3j.jpg',
+    'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto/v1782644373/WhatsApp_Image_2026-06-06_at_09.38.17_efvdpm.jpg',
+    'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto/v1782643524/IMG_7260_rjfulp.jpg',
+    'https://res.cloudinary.com/dwjdbyw4l/image/upload/a_-90,q_auto,f_auto/v1782643277/IMG_6991_xivant.jpg'
   ];
 
   return (
@@ -50,34 +26,22 @@ export default function Toppers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {toppers.map((student, idx) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {images.map((img, idx) => (
             <motion.div
-              key={student.name}
+              key={idx}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-rp-cream rounded-2xl overflow-hidden shadow-lg border border-rp-gold/20 flex flex-col"
+              className="rounded-xl overflow-hidden shadow-md border-2 border-rp-gold/30 bg-rp-cream flex items-center justify-center aspect-[3/4]"
             >
-              <div className="aspect-[4/5] overflow-hidden relative">
-                <img 
-                  src={student.image} 
-                  alt={student.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                />
-                <div className="absolute top-4 right-4 bg-rp-gold text-rp-forest text-xs font-bold px-3 py-1 rounded-full shadow-md uppercase">
-                  {student.grade}
-                </div>
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3 className="text-xl font-bold font-serif text-rp-forest mb-1">{student.name}</h3>
-                <p className="text-sm font-bold text-rp-leaf mb-4">{student.achievement}</p>
-                <div className="mt-auto">
-                  <p className="text-sm text-gray-600 italic border-l-2 border-rp-gold pl-3">
-                    "{student.quote}"
-                  </p>
-                </div>
-              </div>
+              <img 
+                src={img} 
+                alt={`Achiever ${idx + 1}`} 
+                width={800}
+                height={1067}
+                className="w-full h-full object-contain"
+              />
             </motion.div>
           ))}
         </div>

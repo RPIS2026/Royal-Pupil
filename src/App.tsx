@@ -11,6 +11,7 @@ import SchoolInformation from './pages/SchoolInformation';
 import Toppers from './pages/Toppers';
 import FacilitiesDetail from './pages/FacilitiesDetail';
 import Events from './pages/Events';
+import EventGallery from './pages/EventGallery';
 import { useEffect } from 'react';
 
 function FloatingWhatsApp() {
@@ -60,6 +61,7 @@ export default function App() {
         <Route path="/toppers" element={<Toppers />} />
         <Route path="/facilities-detail" element={<FacilitiesDetail />} />
         <Route path="/events" element={<Events />} />
+        <Route path="/events/:id" element={<EventGallery />} />
       </Routes>
       <Footer />
       <FloatingWhatsApp />

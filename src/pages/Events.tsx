@@ -1,31 +1,32 @@
 import { motion } from 'motion/react';
-import AchievementsEvents from '../components/AchievementsEvents';
+import { Link } from 'react-router-dom';
 
 export default function Events() {
-  const pastEvents = [
+  const eventGroups = [
     {
-      title: 'Annual Day Celebration 2025',
-      date: 'December 15, 2025',
-      description: 'A spectacular showcase of cultural programs, drama, and musical performances by students across all grades.',
-      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=1000'
+      id: 'republic-day-2026',
+      title: 'Republic Day 2026',
+      image: 'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto,w_600/v1782642630/IMG_5400_s9bxfi.jpg'
     },
     {
-      title: 'Inter-School Sports Meet',
-      date: 'November 20, 2025',
-      description: 'Royal Pupil hosted over 10 schools for a grand athletic championship, securing the overall winning trophy.',
-      image: 'https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&q=80&w=1000'
+      id: 'school-event',
+      title: 'School Event',
+      image: 'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto,w_600/v1782644149/CSY_6141_-_Copy_avewln.jpg'
     },
     {
-      title: 'National Science Exhibition',
-      date: 'October 05, 2025',
-      description: 'Students demonstrated innovative working models addressing sustainable development and green energy.',
-      image: 'https://images.unsplash.com/photo-1564325724739-bae0bd08762c?auto=format&fit=crop&q=80&w=1000'
+      id: 'august-15-2024',
+      title: 'August 15th 2024',
+      image: 'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto,w_600/v1782644576/IMG_4680_gfgia8.jpg'
     },
     {
-      title: 'Cultural Dance Festival',
-      date: 'August 15, 2025',
-      description: 'A vibrant celebration of Indian heritage through classical and folk dance performances on Independence Day.',
-      image: 'https://images.unsplash.com/photo-1542840410-3092f99611a3?auto=format&fit=crop&q=80&w=1000'
+      id: 'karate-2024',
+      title: 'Karate 2024',
+      image: 'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto,w_600/v1782645810/DSC_0103_nf5aoo.jpg'
+    },
+    {
+      id: 'janmashtami-2023',
+      title: 'Sri Krishna Janmashtami 2023',
+      image: 'https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto,w_600/v1782652242/DSC_0061_eb3b2n.jpg'
     }
   ];
 
@@ -46,37 +47,34 @@ export default function Events() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-          {pastEvents.map((event, idx) => (
-            <motion.div 
-              key={event.title}
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: idx * 0.1 }}
-              className="relative rounded-2xl overflow-hidden shadow-xl group h-[300px]"
-            >
-              <img 
-                src={event.image} 
-                alt={event.title} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex flex-col justify-end p-8">
-                <span className="text-rp-gold font-bold text-sm tracking-wider uppercase mb-2">
-                  {event.date}
-                </span>
-                <h3 className="text-2xl font-serif font-bold text-white mb-2">
-                  {event.title}
-                </h3>
-                <p className="text-white/80 text-sm line-clamp-2">
-                  {event.description}
-                </p>
-              </div>
-            </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {eventGroups.map((event, idx) => (
+            <Link to={`/events/${event.id}`} key={event.id}>
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: idx * 0.1 }}
+                className="relative rounded-2xl overflow-hidden shadow-md group h-[250px] border-2 border-rp-gold/30 hover:shadow-xl transition-all"
+              >
+                <img 
+                  src={event.image} 
+                  alt={event.title} 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent flex flex-col justify-end p-6">
+                  <h3 className="text-xl font-serif font-bold text-white mb-2">
+                    {event.title}
+                  </h3>
+                  <span className="text-rp-gold font-bold text-sm uppercase flex items-center gap-2">
+                    View Gallery <span>→</span>
+                  </span>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
-
-      <AchievementsEvents />
     </div>
   );
 }

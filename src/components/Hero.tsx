@@ -42,7 +42,7 @@ export default function Hero() {
 
           {/* Headings */}
           <h1 className="text-[42px] sm:text-[54px] md:text-[68px] font-serif font-bold text-white mb-[16px] leading-[1.05] tracking-tight">
-            Royal Pupil<br />
+            Royal pupil<br />
             International<br />
             Residential School
           </h1>

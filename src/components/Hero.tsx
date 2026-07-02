@@ -23,8 +23,12 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-between overflow-hidden pt-32 pb-8 bg-gradient-to-b from-[#316E49] via-[#2A5D3E] to-[#1F4A32] border-b-[8px] border-rp-gold">
       {/* Subtle background decorative leaves */}
-      <div className="absolute top-10 -right-10 opacity-10 text-[250px] pointer-events-none transform rotate-[15deg] drop-shadow-2xl">🌱</div>
-      <div className="absolute top-1/3 left-10 opacity-5 text-[150px] pointer-events-none transform -rotate-12 drop-shadow-2xl">🍀</div>
+      <div className="absolute top-0 right-0 sm:-right-10 opacity-15 w-[300px] sm:w-[450px] pointer-events-none transform rotate-[10deg] drop-shadow-2xl">
+        <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto/v1782973257/Screenshot_2026-06-07_172728__1_-removebg-preview_1_r0qbkn.png" alt="Decorative leaf" className="w-full h-auto" />
+      </div>
+      <div className="absolute top-1/3 -left-20 sm:left-0 opacity-10 w-[200px] sm:w-[350px] pointer-events-none transform -rotate-12 drop-shadow-2xl">
+        <img src="https://res.cloudinary.com/dwjdbyw4l/image/upload/q_auto,f_auto/v1782973257/Screenshot_2026-06-07_172728__1_-removebg-preview_1_r0qbkn.png" alt="Decorative leaf" className="w-full h-auto" />
+      </div>
 
       {/* Main Content Centered */}
       <div className="relative z-10 flex-1 flex flex-col items-center justify-center w-full max-w-5xl mx-auto px-4 sm:px-6 text-center">

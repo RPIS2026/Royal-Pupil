@@ -4,10 +4,26 @@ import React, { useState } from 'react';
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    
+    const formData = new FormData(e.currentTarget);
+    formData.append("access_key", "f318638d-9b3f-4d5e-a05f-1c7dac5669d1");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      });
+      
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 5000);
+        e.currentTarget.reset();
+      }
+    } catch (error) {
+      console.error("Error submitting form", error);
+    }
   };
 
   return (
@@ -56,28 +72,28 @@ export default function Contact() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <div>
                   <label className="block text-[11px] font-bold text-rp-dark/70 mb-1 uppercase tracking-wide">Parent / Guardian Name *</label>
-                  <input required type="text" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="John Doe" />
+                  <input name="parent_name" required type="text" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="John Doe" />
                 </div>
                 <div>
                   <label className="block text-[11px] font-bold text-rp-dark/70 mb-1 uppercase tracking-wide">Phone Number *</label>
-                  <input required type="tel" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="+91 xxxxx xxxxx" />
+                  <input name="phone" required type="tel" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="+91 xxxxx xxxxx" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-[16px]">
                 <div>
                   <label className="block text-[11px] font-bold text-rp-dark/70 mb-1 uppercase tracking-wide">Email Address</label>
-                  <input type="email" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="john@example.com" />
+                  <input name="email" type="email" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="john@example.com" />
                 </div>
                 <div>
                   <label className="block text-[11px] font-bold text-rp-dark/70 mb-1 uppercase tracking-wide">Child's Name</label>
-                  <input type="text" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="Child's full name" />
+                  <input name="child_name" type="text" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]" placeholder="Child's full name" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-[11px] font-bold text-rp-dark/70 mb-1 uppercase tracking-wide">Enquiry Type</label>
-                <select className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]">
+                <select name="enquiry_type" className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors text-[13px]">
                   <option>Admissions & Enrollment</option>
                   <option>Fee Structure</option>
                   <option>Hostel / Residential Facilities</option>
@@ -87,7 +103,7 @@ export default function Contact() {
 
               <div>
                 <label className="block text-[11px] font-bold text-rp-dark/70 mb-1 uppercase tracking-wide">Your Message</label>
-                <textarea rows={4} className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors resize-none text-[13px]" placeholder="How can we help you?"></textarea>
+                <textarea name="message" rows={4} className="w-full bg-[#fafafa] border border-[#ddd] rounded-[4px] px-[12px] py-[8px] focus:outline-none focus:border-rp-leaf transition-colors resize-none text-[13px]" placeholder="How can we help you?"></textarea>
               </div>
 
               <button

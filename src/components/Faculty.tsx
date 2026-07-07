@@ -5,7 +5,7 @@ export default function Faculty() {
     {
       name: "Dr. C. Sai Prasad Reddy, MBBS",
       role: "PRESIDENT, SRI SAI RAM TRUST",
-      avatar: "🩺",
+      avatar: "https://res.cloudinary.com/dwjdbyw4l/image/upload/v1783443414/WhatsApp_Image_2026-07-04_at_17.21.01_sulkja.jpg",
       bio: "A physician-turned-entrepreneur building institutions in healthcare, education and infrastructure to serve Ballari and the region.",
       experience: "",
       badges: ["MBBS", "Healthcare Entrepreneurship", "Institution Building"],
@@ -32,7 +32,8 @@ export default function Faculty() {
     {
       name: "T. Vijayalakshmi",
       role: "Principal",
-      avatar: "👩‍🏫",
+      avatar: "https://res.cloudinary.com/dwjdbyw4l/image/upload/v1783443414/WhatsApp_Image_2026-07-04_at_17.20.02_wwkkzx.jpg",
+      avatarPosition: "object-top",
       bio: "A passionate educator orchestrating the symphony of academic excellence at Royal Pupil International Residential School.",
       experience: "17+ Years (2008–2025)",
       badges: ["M.Sc Mathematics", "B.Ed", "Educational Leadership"],
@@ -47,7 +48,7 @@ export default function Faculty() {
     {
       name: "Bheema Linga Reddy K",
       role: "Secretary",
-      avatar: "👨‍💼",
+      avatar: "https://res.cloudinary.com/dwjdbyw4l/image/upload/v1783443414/WhatsApp_Image_2026-07-04_at_17.20.03_hf9rhj.jpg",
       bio: "An astute educationist and marketing professional driving the foundational vision of the Three Leaves Educational Society.",
       experience: "12+ Years in Marketing & Education",
       badges: ["Administration", "Programme Management", "Community Outreach"],
@@ -82,8 +83,12 @@ export default function Faculty() {
               className="bg-white rounded-[8px] p-[16px] shadow-[0_4px_12px_rgba(0,0,0,0.05)] border-l-4 border-rp-leaf flex flex-col"
             >
               <div className="flex gap-[16px] mb-[12px]">
-                <div className="w-[60px] h-[60px] bg-rp-forest rounded-[50%] flex items-center justify-center text-[24px] flex-shrink-0">
-                  {person.avatar}
+                <div className="w-[60px] h-[60px] bg-rp-forest rounded-[50%] flex items-center justify-center text-[24px] flex-shrink-0 overflow-hidden border-2 border-rp-leaf/30">
+                  {person.avatar.startsWith('http') ? (
+                    <img src={person.avatar} alt={person.name} className={`w-full h-full object-cover ${person.avatarPosition || 'object-center'}`} />
+                  ) : (
+                    person.avatar
+                  )}
                 </div>
                 <div>
                   <h3 className="text-[16px] font-serif font-bold text-rp-forest mb-1">

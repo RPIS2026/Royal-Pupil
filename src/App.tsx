@@ -18,6 +18,18 @@ function FloatingSocials() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
       <a 
+        href="https://maps.app.goo.gl/2NqEEwg1YLtgmBCF8" 
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-14 h-14 bg-[#EA4335] text-white rounded-full flex items-center justify-center shadow-[0_4px_12px_rgba(234,67,53,0.4)] hover:scale-110 transition-transform cursor-pointer"
+        aria-label="View our location on Google Maps"
+      >
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      </a>
+      <a 
         href="https://instagram.com/royal_pupil_" 
         target="_blank"
         rel="noopener noreferrer"

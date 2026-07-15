@@ -75,9 +75,14 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-[24px] flex flex-col md:flex-row justify-between items-center gap-4 text-[11px] text-white/60">
-          <p>
-            &copy; 2026 Royal Pupil International Residential School. All rights reserved.
-          </p>
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <p>
+              &copy; 2026 Royal Pupil International Residential School. All rights reserved.
+            </p>
+            <p>
+              Designed and developed by <a href="https://vertexflows.in" target="_blank" rel="noopener noreferrer" className="text-white/80 hover:text-rp-gold transition-colors underline decoration-white/30 underline-offset-2">Vertex Flows</a>
+            </p>
+          </div>
           <p className="text-rp-gold font-serif italic text-[12px]">
             "Three leaves...Academic excellence, Physical fitness and Moral Values"
           </p>
